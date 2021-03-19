@@ -3,7 +3,7 @@ chartZone('Data/ZonAnn.Ts+dSST.csv');
 chartNorth('Data/Northern.Ts+dSST.csv');
 chartSouth('Data/SH.Ts+dSS.csv');
 chartCombined('Data/ZonAnn.Ts+dSST.csv');
-//&#176;
+
 async function chartZone (cvs){
     // Calling the get data function to parse the CVS file, then creating the chart
     const response = await getData(cvs);
@@ -21,7 +21,7 @@ async function chartZone (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Global Combined Land-Surface Air and Sea-Surface water temperature in &deg; C',
+                label: 'Global Combined Land-Surface Air and Sea-Surface water temperature in C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',
@@ -112,7 +112,7 @@ async function chartNorth (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Northern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in &deg; C',
+                label: 'Northern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',
@@ -201,7 +201,7 @@ async function chartSouth (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Southern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in &deg; C',
+                label: 'Southern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',

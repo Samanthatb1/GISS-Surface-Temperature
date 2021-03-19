@@ -3,7 +3,7 @@ chartZone('Data/ZonAnn.Ts+dSST.csv');
 chartNorth('Data/Northern.Ts+dSST.csv');
 chartSouth('Data/SH.Ts+dSS.csv');
 chartCombined('Data/ZonAnn.Ts+dSST.csv');
-
+//&#176;
 async function chartZone (cvs){
     // Calling the get data function to parse the CVS file, then creating the chart
     const response = await getData(cvs);
@@ -21,7 +21,7 @@ async function chartZone (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Global Combined Land-Surface Air and Sea-Surface water temperature in °C',
+                label: 'Global Combined Land-Surface Air and Sea-Surface water temperature in &deg; C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',
@@ -53,9 +53,7 @@ async function chartZone (cvs){
                         min: 13.4,
                         max: 15.4,
                         fontSize: 19,
-                        fontColor: 'black',
-                        callback: function(value, index, values) {
-                            return value + '°'; }
+                        fontColor: 'black'
                     },
                     scaleLabel:{
                         display: true,
@@ -114,7 +112,7 @@ async function chartNorth (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Northern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in °C',
+                label: 'Northern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in &deg; C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',
@@ -144,9 +142,7 @@ async function chartNorth (cvs){
                         min: 13.4,
                         max: 15.4,
                         fontSize: 19,
-                        fontColor: 'black',
-                        callback: function(value, index, values) {
-                            return value + '°'; }
+                        fontColor: 'black'
                     },
                     scaleLabel:{
                         display: true,
@@ -205,7 +201,7 @@ async function chartSouth (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Southern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in °C',
+                label: 'Southern Hemisphere Annual Land-Surface Air and Sea-Surface water temperature in &deg; C',
                 data: response.yAxisLabel,
                 backgroundColor: gradient,
                 borderColor: 'black',
@@ -235,9 +231,7 @@ async function chartSouth (cvs){
                         min: 13.4,
                         max: 15.4,
                         fontSize: 19,
-                        fontColor: 'black',
-                        callback: function(value, index, values) {
-                            return value + '°'; }
+                        fontColor: 'black'
                     },
                     scaleLabel:{
                         display: true,
@@ -290,7 +284,7 @@ async function chartCombined (cvs){
         data: {
             labels: response.xAxisLabel,
             datasets: [{
-                label: 'Global Temperature in °C',
+                label: 'Global Temperature in C',
                 data: response.yGlobalAxisLabel,
                 backgroundColor: 'rgba(255, 99, 132, 1)',
                 borderColor: 'rgba(255, 99, 132, 0.5)',
@@ -298,7 +292,7 @@ async function chartCombined (cvs){
                 fill: false,
                 pointRadius: 4.5
             }, {
-                label: 'Northern Hemisphere Temperature in °C',
+                label: 'Northern Hemisphere Temperature in C',
                 data: response.yNorthAxisLabel,
                 backgroundColor: 'rgba(6, 194, 204, 1)',
                 borderColor: 'rgba(6, 194, 204, 0.5)',
@@ -307,7 +301,7 @@ async function chartCombined (cvs){
                 pointRadius: 4.5
             }, 
             {
-                label: 'Southern Hemisphere in °C',
+                label: 'Southern Hemisphere in C',
                 data: response.ySouthAxisLabel,
                 backgroundColor: 'rgba(70, 199, 66, 1)',
                 borderColor: 'rgba(70, 199, 66, .5)',
@@ -337,9 +331,7 @@ async function chartCombined (cvs){
                         min: 13.4,
                         max: 15.4,
                         fontSize: 19,
-                        fontColor: 'black',
-                        callback: function(value, index, values) {
-                            return value + '°'; }
+                        fontColor: 'black'
                     },
                     scaleLabel:{
                         display: true,
